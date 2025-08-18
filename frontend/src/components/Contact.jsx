@@ -38,7 +38,7 @@ function Contact(){
     e.preventDefault();
     setStatus("sending...");
      try{
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
             method : "POST",
             headers: {
                 "content-type": "application/json"
