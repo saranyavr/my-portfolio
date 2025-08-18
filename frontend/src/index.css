@@ -334,32 +334,93 @@ a:hover {
 
 
 /* Resume.css */
-.resume-h1{
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #6a7d7a;
-  margin-bottom: 1.2rem;
+/* Resume Section */
+#resume {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Resume Heading */
+.resume-h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
   letter-spacing: 1px;
 }
 
+/* Button Styling */
 .resume-button {
-  background: #33e6c6;
-  color: #0a192f;
-  border-radius: 10px;
-  padding: 12px 24px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
   display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
   cursor: pointer;
+  width: 200px; /* same width for both */
+  text-align: center;
+  border: 2px solid transparent;
 }
 
-.resume-button:hover {
-  background: #29b8a6;
+/* View Resume (Primary Button) */
+.resume-button:first-of-type {
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 210, 255, 0.4);
+}
+
+.resume-button:first-of-type:hover {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 210, 255, 0.6);
+}
+
+/* Download Resume (Secondary Button) */
+.resume-button:last-of-type {
+  border: 2px solid #00d2ff;
+  background: transparent;
+  color: #00d2ff;
+}
+
+.resume-button:last-of-type:hover {
+  background: #00d2ff;
   color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 210, 255, 0.6);
 }
 
+/* Download Resume (Secondary Button) */
+.resume-button:last-of-type {
+  border: 2px solid #00d2ff;
+  background: transparent;
+  color: #00d2ff;
+}
 
+.resume-button:last-of-type:hover {
+  background: #00d2ff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 210, 255, 0.6);
+}
+
+/* On small screens, stack buttons vertically */
+@media (max-width: 600px) {
+  .resume-buttons-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .resume-button {
+    width: 90%; /* Take almost full width on mobile */
+    margin: 8px 0;
+    padding: 12px 0;
+  }
+}
 
 /* Projects.css */
 .projects-list {

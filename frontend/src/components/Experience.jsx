@@ -7,9 +7,10 @@ function Experience(){
 
     useEffect(() => {
         const fetchExperience = async () => {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/experience`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/experience`);
            const data = await response.json();
             setExperience(data);
+           console.log("Experience data fetched:", data);
           
         };
         fetchExperience();

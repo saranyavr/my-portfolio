@@ -38,7 +38,7 @@ function Contact(){
     e.preventDefault();
     setStatus("sending...");
      try{
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
             method : "POST",
             headers: {
                 "content-type": "application/json"
@@ -51,10 +51,12 @@ function Contact(){
             setFormData({name:"", email:"", message:""});
         }else{
              setStatus("Failed to send message.");
+             console.error("Failed to send message:", response.statusText);
         }
 
      }catch(error){
        setStatus("Error sending message. Please try again.");
+       console.error("Error sending message:", error);
 
 
      };

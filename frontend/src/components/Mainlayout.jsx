@@ -12,7 +12,7 @@ function Mainlayout(){
     return (
         <div className="main-layout">
             <section id="about">   <About /></section>
-             <section id="experience">   <Experience /></section>
+             <section id="experience"> <Experience /></section>
            <section id="projects">   <Projects /></section>          
            <section id="resume">   <Resume /></section>
            <section id="contact">   <Contact /></section>

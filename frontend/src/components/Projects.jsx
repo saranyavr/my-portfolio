@@ -4,39 +4,41 @@ import React, { useEffect, useState } from "react";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
+  // Fetch projects data from the API
 
-  useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/projects`;
+useEffect(() => {
+  const fetchProjects = async () => {
+    const url = `${process.env.REACT_APP_API_URL}/api/projects`;
     console.log("Fetching from:", url);
-    fetch(url)
-    .then(res => {
+    try {
+      const res = await fetch(url);
       if (!res.ok) {
+        const errorText = await res.text(); // Get backend error message (if any)
+        console.error("Fetch error response:", errorText);
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-      return res.json();
-    })
-    .then(data => {
+      const data = await res.json();
       setProjects(data);
-      console.log("Fetched projects:", data);
-    })
-    .catch(err => {
+      console.log("Projects data fetched:", data);
+    } catch (err) {
       console.error("Error fetching projects:", err);
-    });
+    }
+  };
+
+  fetchProjects();
 }, []);
 
-
-
-  
+ 
 
   return (
     <section>
       <h2>Projects</h2>
       <div className="projects-list">
         {projects.map(proj => (
-      <div key={proj.id} className="project-card">
-        <h3 className="project-title">{proj.name}</h3>
-        <p className="project-description">{proj.description}</p>
-        <div>
+          <div key={proj.id} className="project-card">
+            <h3 className="project-title">{proj.name}</h3>
+            <p className="project-description">{proj.description}</p>
+         <div className="project-tech">
           <strong className="project-tech-title">Technologies: </strong>
           <div className="project-tech-list">
             {proj.technologies && proj.technologies.length > 0 ? (
