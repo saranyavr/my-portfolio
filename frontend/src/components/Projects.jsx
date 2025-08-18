@@ -8,7 +8,7 @@ function Projects() {
 
 useEffect(() => {
   const fetchProjects = async () => {
-    const url = `${process.env.REACT_APP_API_URL}/api/projects`;
+    const url = `${process.env.REACT_APP_API_URL}/projects`;
     console.log("Fetching from:", url);
     try {
       const res = await fetch(url);

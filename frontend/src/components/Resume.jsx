@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Resume(){
-     const resumeUrl = `${process.env.REACT_APP_API_URL}/api/resume`;
+     const resumeUrl = `${process.env.REACT_APP_API_URL}/resume`;
     return(
        <section id="resume" style={{ marginTop: '3rem' }}>
       <h2 className="resume-h1">My Resume</h2>
